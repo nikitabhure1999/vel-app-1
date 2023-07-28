@@ -15,9 +15,9 @@ pipeline {
 
 				     sh "systemctl start docker"
 				     sh "docker stop test"
-				     sh "docker prune -a -f"
+				     sh "docker system prune -a -f"
   				     sh "docker build -t ubuntu:1.0 ."
-                                     sh "docker run -itdp 80:80 --name test ubuntu:1.0"
+                                     sh "docker run -itdp 90:80 --name test ubuntu:1.0"
 				     
 							                        }			                       
 			
