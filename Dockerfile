@@ -1,5 +1,4 @@
                         FROM ubuntu:18.04
-		        MAINTAINER nikita
 	                RUN apt-get update -y && apt-get install apche2-y
 		        RUN  service apache2 restart
 		        COPY index.html /var/www/html
