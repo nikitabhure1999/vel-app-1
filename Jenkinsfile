@@ -1,8 +1,8 @@
 pipeline {
   agent {
 	  label {        
-		           label "slave-1"  
-		            customWorkspace "/mnt/jenkins-slave"
+		           label "built-in"  
+		            customWorkspace "/mnt/data"
              					}
 						}
 		 
@@ -13,9 +13,9 @@ pipeline {
                              steps {	
 				
 		
-				     sh "sudo systemctl start docker"
-  				     sh "sudo docker build -t ubuntu:1.0 ."
-                                     sh " sudo docker run -itdp 80:80 --name test ubuntu:1.0"
+				     sh "systemctl start docker"
+  				     sh "docker build -t ubuntu:1.0 ."
+                                     sh "docker run -itdp 80:80 --name test ubuntu:1.0"
 				     
 							                        }			                       
 			
